@@ -51,7 +51,7 @@ Crontab.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       fn: PropTypes.func.isRequired,
-      id: PropTypes.string,
+      id: PropTypes.string.isRequired,
       config: PropTypes.string.isRequired,
       name: PropTypes.string
     })
