@@ -1,6 +1,6 @@
 {
-  "name": "reactjs-crontab",
-  "version": "4.5.0",
+  "name": "crontab",
+  "version": "1.0.0",
   "description": "React component that allow you to schedule task in reactjs",
   "author": "shawnscoding",
   "license": "MIT",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shawnscoding/reactjs-crontab"
+    "url": "https://github.com/giuseppeabn/crontab"
   },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
