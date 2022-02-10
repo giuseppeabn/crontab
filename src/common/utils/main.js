@@ -14,15 +14,7 @@ const formatDow = (dow) => {
 }
 
 const detectTaskTime = (arr, tz) => {
-  // console.log('tz ::', tz)
   const now = getCurrentTime(tz)
-
-  //   console.log('now ::', now)
-  //   console.log('now currentMin::', currentMin)
-  // console.log('now currentHour::', currentHour)
-  // console.log('now currentDom::', currentDom)
-  // console.log('now currentMon::', currentMon)
-  // console.log('now currentDow::', currentDow)
 
   const min = arr[0]
   const hour = arr[1]
@@ -55,22 +47,11 @@ const detectTaskTime = (arr, tz) => {
     return dowValidateRes.isNeededToRun
   }
 
-  // console.log('minValidateRes ::', minValidateRes.isNeededToRun)
-
-  // console.log('hourValidateRes ::', hourValidateRes.isNeededToRun)
-  // console.log('domValidateRes ::', domValidateRes.isNeededToRun)
-
-  // console.log('monValidateRes ::', monValidateRes.isNeededToRun)
-
-  // console.log('dowValidateRes ::', dowValidateRes.isNeededToRun)
-
   return true
 }
 
 export const runFn = (task, tz) => {
   const { fn, splittedConf, objOfConf } = task
-  // const utcTime = new Date(new Date().toUTCString().slice(0, -3))
-  // console.log('utc::', utcTime)
 
   const isNotAsterisk = splittedConf
     .slice(0, splittedConf.length - 1)
@@ -78,8 +59,6 @@ export const runFn = (task, tz) => {
 
   if (isNotAsterisk === undefined) fn()
   else {
-    // console.log('objOfConf ::', objOfConf)
-
     const minValidateRes = validateMin(objOfConf[0])
 
     const hourValidateRes = validateHour(objOfConf[1])
@@ -106,15 +85,12 @@ const callRepeater = (task, timeZone) => {
   const { fn, objOfConf } = task
   if (detectTaskTime(objOfConf, timeZone)) fn()
   setInterval(() => {
-    // console.log('second interval :', getCurrentTime('UTC').getSeconds())
     if (detectTaskTime(objOfConf, timeZone)) fn()
   }, 60000)
 }
 
 export const repeatExecute = (arr, tz) => {
   const killOnTime = setInterval(() => {
-    // console.log('first interval :', getCurrentTime(tz).getSeconds())
-
     if (getCurrentTime(tz).getSeconds() === 0) {
       for (const el of arr) {
         if (el.valid) callRepeater(el, tz)

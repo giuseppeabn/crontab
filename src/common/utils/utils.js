@@ -438,7 +438,6 @@ export const formatDOWGudie = (dows) => {
 }
 
 export const insertZero = (arr) => {
-  // console.log('arr ', arr)
   const result = arr.map((item) => {
     if (item.length === 1 && item !== '*') {
       return (item = `0${item}`)
@@ -448,8 +447,6 @@ export const insertZero = (arr) => {
       return item
     }
   })
-
-  // console.log('result', result)
 
   return result
 }
@@ -504,41 +501,6 @@ export const convertConfigToObj = (str) => {
     console.error('Bad Settings')
   }
 }
-
-// export const isShouldBeOn = (value, fieldValue) => {
-//   const splitted = fieldValue.split(',')
-
-//   if (fieldValue === '*') {
-//     return false
-//   } else if (splitted.length === 1) {
-//     if (fieldValue === value) {
-//       return true
-//     } else {
-//       return false
-//     }
-//   } else if (splitted.length > 1) {
-//     const found = splitted.find((val) => val === value)
-
-//     if (found) {
-//       return true
-//     } else {
-//       return false
-//     }
-//   }
-// }
-
-//  const preEl = useRef(null)
-// const handleCopyText = (e) => {
-//   const copyText = preEl.current
-//   const contents = copyText.innerHTML
-//   console.log('contents', contents)
-//   var tempInput = document.createElement('input')
-//   tempInput.value = contents
-//   document.body.appendChild(tempInput)
-//   tempInput.select()
-//   tempInput.setSelectionRange(0, 99999)
-//   document.execCommand('copy')
-// }
 
 export const getExplicitTz = (tz) => {
   let explicitTz
