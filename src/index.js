@@ -46,24 +46,6 @@ const Crontab = React.memo(({ timeZone, tasks, dashboard }) => {
       setTasks(executableTasks)
     }
   }, [tasks])
-
-  if (!hidden && route) {
-    if (_tasks && window.location.pathname === route) {
-      return (
-        <div className={styles.global}>
-          <Dashboard timeZone={timeZone} tasks={_tasks} />
-        </div>
-      )
-    } else if (_tasks) return <React.Fragment />
-  }
-
-  // console.log('[Crontab] rendered')
-  if (_tasks && !hidden)
-    return (
-      <div className={styles.global}>
-        <Dashboard timeZone={timeZone} tasks={_tasks} />
-      </div>
-    )
   return <React.Fragment />
 }, comparisonFn)
 
