@@ -135,7 +135,6 @@ This will do what it says at the scheduled time.
 - **No extra dependencies** except React
 - **No style library** is used to style the components. **vanilla css** is used.
 - Provide **specific error message**, you will find it so easy to debug.
-- Provide **Dashboard** which enables easy monitoring of your crontab
 - Provide Demo website which helps you to easily set up your crontab
 
 ## Cron Syntax
